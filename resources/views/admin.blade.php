@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+@section('robots', 'noindex')
 @section('body-class', 'admin')
 @section('page-title', 'Admin page')
 @section('page-tagline', 'Manage your spam-protected link')
