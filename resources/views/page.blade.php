@@ -1,8 +1,11 @@
 @extends('layouts.app')
 
-@section('body-class', 'home')
+@section('body-class', 'page')
 @section('page-title', 'Spam Annihilator')
 @section('page-tagline', 'Easily block spam from Discord, Telegram and other invite links')
+
+@section('header-form')
+@endsection
 
 @section('content')
   <section class="primary testimonials">
