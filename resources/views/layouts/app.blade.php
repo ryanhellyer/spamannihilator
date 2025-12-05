@@ -85,7 +85,7 @@
     <form method="POST" action="{{ route('redirect.store') }}">
         @csrf
         <p>
-            <label for="to">To (destination URL)</label>
+            <label for="to">Link to protect</label>
             <input type="url" name="to" id="to" placeholder="https://discord.gg/example" required>
         </p>
         <p>
