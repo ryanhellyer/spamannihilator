@@ -9,6 +9,7 @@ namespace App\Services;
 class UrlLookupService
 {
     private array $urlMappings = [
+        'wandern' => 'https://t.me/+VRNLJOrG7OwxZWIy',
         'psb' => 'https://t.me/+riKLSWe79YMyMWYy',
         'kothvoice' => 'https://discord.gg/UWagZcG8pj',
         'ntrlkoth' => 'https://discord.gg/TTphyud4PE',
