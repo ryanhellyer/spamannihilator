@@ -85,10 +85,6 @@
     <form method="POST" action="{{ route('redirect.store') }}">
         @csrf
         <p>
-            <label for="from">From (slug)</label>
-            <input type="text" name="from" id="from" placeholder="e.g., my-group" required>
-        </p>
-        <p>
             <label for="to">To (destination URL)</label>
             <input type="url" name="to" id="to" placeholder="https://discord.gg/example" required>
         </p>

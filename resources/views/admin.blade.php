@@ -26,7 +26,7 @@
 
         <p>
           <label for="from">Your spam-protected link:</label>
-          <div class="from-wrapper" style="display: flex; align-items: center; gap: 8px;">
+          <div class="from-wrapper">
             @php
               $fullUrl = route('check', ['slug' => $urlMapping->slug]);
               $checkIndex = strpos($fullUrl, '/check/');
@@ -34,10 +34,10 @@
             @endphp
             <span id="from-prefix">{{ $baseUrl }}</span>
             <input type="text" name="from" id="from" value="{{ $urlMapping->slug }}" placeholder="e.g., my-group" required style="flex: 1;">
-            <button type="button" class="copy-button" onclick="copyField('from', '{{ $baseUrl }}')" title="Copy">📋</button>
+            <button type="button" class="copy-button" onclick="copyField('from', '{{ $baseUrl }}')" title="Copy">Copy</button>
           </div>
           @error('from')
-            <span>{{ $message }}</span>
+            <span class="inline-error">{{ $message }}</span>
           @enderror
         </p>
 
@@ -45,23 +45,21 @@
           <label for="to">To (destination URL)</label>
           <input type="url" name="to" id="to" value="{{ old('to', $urlMapping->url) }}" placeholder="https://discord.gg/example" required>
           @error('to')
-            <span>{{ $message }}</span>
+            <span class="inline-error">{{ $message }}</span>
           @enderror
         </p>
         
-        <label>Admin URL - Save this URL to edit your redirect later. Keep it private!</label>
+        <label>Admin URL - Save this private URL to edit your link later!</label>
         <p>
-          <div style="display: flex; align-items: center; gap: 8px;">
             <input type="text" id="admin-url" value="{{ $adminUrl }}" readonly style="flex: 1;">
-            <button type="button" class="copy-button" onclick="copyField('admin-url')" title="Copy">📋</button>
-          </div>
+            <button type="button" class="copy-button" onclick="copyField('admin-url')" title="Copy">Copy</button>
         </p>
         
         <p>
           <label for="email">Email (optional - allows us to contact you if anything changes with your URL)</label>
           <input type="email" name="email" id="email" value="{{ old('email', $urlMapping->email) }}" placeholder="your@email.com">
           @error('email')
-            <span>{{ $message }}</span>
+            <span class="inline-error">{{ $message }}</span>
           @enderror
         </p>
 

@@ -21,15 +21,19 @@ class RedirectManagementController extends Controller
     public function store(Request $request): RedirectResponse
     {
         $validated = $request->validate([
-            'from' => 'required|string|max:255|unique:url_mappings,slug',
             'to' => 'required|url|max:2048',
         ]);
 
+        // Generate a unique random slug
+        do {
+            $slug = bin2hex(random_bytes(8)); // 16 character hex string
+        } while (UrlMapping::where('slug', $slug)->exists());
+
         // Generate admin hash using HMAC with app key (non-reversible)
-        $adminHash = hash_hmac('sha256', $validated['from'], config('app.key'));
+        $adminHash = hash_hmac('sha256', $slug, config('app.key'));
 
         $urlMapping = UrlMapping::create([
-            'slug' => $validated['from'],
+            'slug' => $slug,
             'url' => $validated['to'],
             'admin_hash' => $adminHash,
         ]);
@@ -86,13 +90,13 @@ class RedirectManagementController extends Controller
             $this->urlLookupService->clearCache($validated['from']);
 
             return redirect()->route('admin.show', ['hash' => $newHash])
-                ->with('success', 'Redirect updated successfully. Please save your new admin URL.');
+                ->with('success', 'Link updated successfully. Please save your new admin URL.');
         }
 
         // Clear cache for the slug
         $this->urlLookupService->clearCache($urlMapping->slug);
 
         return redirect()->route('admin.show', ['hash' => $hash])
-            ->with('success', 'Redirect updated successfully.');
+            ->with('success', 'Link updated successfully.');
     }
 }
