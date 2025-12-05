@@ -12,6 +12,7 @@
 	--grey: #999;
 	--dark-grey: #333;
 	--black: #000;
+	--success: #4caf50;
 
 	--primary-color-base: #1483c8;
 	--primary-color-highlight: #137fbf;
@@ -171,8 +172,28 @@ header {
 				font-weight: 800;
 				margin-top: 1.5rem;
 			}
+
+			span {
+				color: red;
+				display: block;
+				margin-top: 0.5rem;
+			}
 		}
 	}
+}
+
+/* =Admin page
+-------------------------------------------------------------- */
+.success {
+	background: var(--success);
+	color: var(--white);
+	padding: 1rem;
+	margin-bottom: 2rem;
+	border-radius: 4px;
+}
+
+body.admin .button {
+	margin: 0;
 }
 
 /* =Main Menu

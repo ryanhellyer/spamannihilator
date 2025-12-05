@@ -78,7 +78,8 @@
     @endif
 
     @section('header-form')
-    <form method="POST">
+    <form method="POST" action="{{ route('redirect.store') }}">
+        @csrf
         <p>
             <label for="from">From (slug)</label>
             <input type="text" name="from" id="from" placeholder="e.g., my-group" required>

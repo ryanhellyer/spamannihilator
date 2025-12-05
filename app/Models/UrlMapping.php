@@ -9,5 +9,7 @@ class UrlMapping extends Model
     protected $fillable = [
         'slug',
         'url',
+        'admin_hash',
+        'email',
     ];
 }
