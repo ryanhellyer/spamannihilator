@@ -2,34 +2,51 @@
 
 namespace App\Services;
 
-/**
- * Hard-coded URL mappings.
- * In the future, this will be replaced with database lookups.
- */
+use App\Models\UrlMapping;
+use Illuminate\Support\Facades\Cache;
+
 class UrlLookupService
 {
-    private array $urlMappings = [
-        'wandern' => 'https://t.me/+VRNLJOrG7OwxZWIy',
-        'psb' => 'https://t.me/+riKLSWe79YMyMWYy',
-        'kothvoice' => 'https://discord.gg/UWagZcG8pj',
-        'ntrlkoth' => 'https://discord.gg/TTphyud4PE',
-        'jelly' => 'https://t.me/joinchat/UhDoWth1dzlVhv6j',
-        '5aa95' => 'http://bit.ly/berlinsocialchat',
-        '94d39' => 'https://clockworkbanana.com/berlin-social-chat-groups-community/',
-        'd2a94' => 'https://discord.gg/amT2vCbJ',
-        'jellydiscord' => 'https://discord.gg/9bfpV2z',
-        'american-pro-mazda-cup' => 'https://discord.gg/6s87v5',
-        'undiecar' => 'https://discordapp.com/invite/csjKs6z',
-        'seacrest' => 'https://discord.gg/QZZB6GZ',
-    ];
+    private const CACHE_TTL = 3600; // 1 hour
+    private const CACHE_PREFIX = 'url_mapping:';
+    private const CACHE_ALL_KEY = 'url_mappings:all';
 
     public function getUrl(string $slug): ?string
     {
-        return $this->urlMappings[$slug] ?? null;
+        $cacheKey = self::CACHE_PREFIX . $slug;
+
+        return Cache::remember($cacheKey, self::CACHE_TTL, function () use ($slug) {
+            $mapping = UrlMapping::where('slug', $slug)->first();
+            return $mapping?->url;
+        });
     }
 
     public function slugExists(string $slug): bool
     {
-        return isset($this->urlMappings[$slug]);
+        $cacheKey = self::CACHE_PREFIX . $slug;
+
+        return Cache::remember($cacheKey . ':exists', self::CACHE_TTL, function () use ($slug) {
+            return UrlMapping::where('slug', $slug)->exists();
+        });
+    }
+
+    /**
+     * Clear cache for a specific slug
+     */
+    public function clearCache(string $slug): void
+    {
+        Cache::forget(self::CACHE_PREFIX . $slug);
+        Cache::forget(self::CACHE_PREFIX . $slug . ':exists');
+        Cache::forget(self::CACHE_ALL_KEY);
+    }
+
+    /**
+     * Clear all URL mapping cache
+     */
+    public function clearAllCache(): void
+    {
+        Cache::forget(self::CACHE_ALL_KEY);
+        // Note: Individual cache keys will expire naturally, but we could
+        // implement a more aggressive clear if needed
     }
 }

@@ -30,6 +30,7 @@ EXCLUDES=(
     --exclude='public/files/'
     --exclude='.phpunit.result.cache'
     --exclude='access.log'
+    --exclude='public/adminer.php'
 )
 
 echo "==================================="
