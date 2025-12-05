@@ -26,7 +26,7 @@
 
         <p>
           <label for="from">Your spam-protected link:</label>
-          <div class="from-wrapper">
+          <span class="from-wrapper">
             @php
               $fullUrl = route('check', ['slug' => $urlMapping->slug]);
               $checkIndex = strpos($fullUrl, '/check/');
@@ -35,7 +35,7 @@
             <span id="from-prefix">{{ $baseUrl }}</span>
             <input type="text" name="from" id="from" value="{{ $urlMapping->slug }}" placeholder="e.g., my-group" required style="flex: 1;">
             <button type="button" class="copy-button" onclick="copyField('from', '{{ $baseUrl }}')" title="Copy">Copy</button>
-          </div>
+          </span>
           @error('from')
             <span class="inline-error">{{ $message }}</span>
           @enderror

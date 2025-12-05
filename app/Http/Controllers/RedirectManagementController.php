@@ -80,21 +80,14 @@ class RedirectManagementController extends Controller
             'email' => $validated['email'] ?? null,
         ]);
 
-        // If slug changed, regenerate admin hash
+        // Clear cache for both old and new slugs if slug changed
         if ($oldSlug !== $validated['from']) {
-            $newHash = hash_hmac('sha256', $validated['from'], config('app.key'));
-            $urlMapping->update(['admin_hash' => $newHash]);
-            
-            // Clear cache for both old and new slugs
             $this->urlLookupService->clearCache($oldSlug);
             $this->urlLookupService->clearCache($validated['from']);
-
-            return redirect()->route('admin.show', ['hash' => $newHash])
-                ->with('success', 'Link updated successfully. Please save your new admin URL.');
+        } else {
+            // Clear cache for the slug
+            $this->urlLookupService->clearCache($urlMapping->slug);
         }
-
-        // Clear cache for the slug
-        $this->urlLookupService->clearCache($urlMapping->slug);
 
         return redirect()->route('admin.show', ['hash' => $hash])
             ->with('success', 'Link updated successfully.');
