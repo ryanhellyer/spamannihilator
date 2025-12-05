@@ -7,7 +7,7 @@
 <meta property="og:locale" content="{{ str_replace('_', '-', app()->getLocale()) }}" />
 <meta property="og:title" content="@yield('og:title', 'Spam Destruction - Spam Annihilator')" />
 <meta property="og:site_name" content="Spam Annihilator" />
-<meta property="og:description" content="@yield('og:description', 'This service hasn\'t proven very popular (partially due to lack of promotion) and so it has been deprecated. All old links will continue working however! Powered by the Spam Destroyer for WordPress')" />
+<meta property="og:description" content="@yield('og:description', 'Easily block spam from Discord, Telegram and other invite links')" />
 <meta property="og:url" content="{{ url('/') }}" />
 <meta name="twitter:card" content="summary_large_image" />
 
