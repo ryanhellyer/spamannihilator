@@ -6,7 +6,7 @@
 echo "Committing and pushing changes..."
 git add --all
 git commit -m 'x'
-git push origin master
+git push origin main
 echo "Building assets..."
 npm run build
 
