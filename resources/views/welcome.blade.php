@@ -18,7 +18,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 
 <link rel='dns-prefetch' href='//fonts.googleapis.com' />
-<link rel='stylesheet' id='spamannhilator-css' href='{{ asset('css/style.css') }}' type='text/css' media='all' />
+<link rel='stylesheet' id='spamannhilator-css' href='{{ asset('css/old.css') }}' type='text/css' media='all' />
 <link rel='stylesheet' id='google-open-sans-css' href='https://fonts.googleapis.com/css?family=Open+Sans%3A400%2C800&#038;ver=1.0925962461' type='text/css' media='all' />
 </head>
 <body class="home wp-singular page-template-default page">
