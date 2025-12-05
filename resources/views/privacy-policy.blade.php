@@ -4,7 +4,10 @@
 @section('page-title', 'Privacy Policy')
 @section('page-tagline', 'How we protect and handle your personal data')
 @section('title', 'Privacy Policy - Spam Annihilator')
+@section('description', 'Learn how Spam Annihilator protects and handles your personal data. Our privacy policy covers data collection, cookies, analytics, and your rights.')
+@section('robots', 'noindex')
 @section('og:title', 'Privacy Policy - Spam Annihilator')
+@section('og:description', 'Learn how Spam Annihilator protects and handles your personal data. Our privacy policy covers data collection, cookies, analytics, and your rights.')
 @section('canonical', url('/privacy-policy/'))
 
 @section('header-button')

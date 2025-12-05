@@ -4,6 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+<meta name="description" content="@yield('description', 'Easily block spam from Discord, Telegram and other invite links')" />
+@hasSection('robots')
+<meta name="robots" content="@yield('robots')" />
+@endif
 <meta property="og:locale" content="{{ str_replace('_', '-', app()->getLocale()) }}" />
 <meta property="og:title" content="@yield('og:title', 'Spam Destruction - Spam Annihilator')" />
 <meta property="og:site_name" content="Spam Annihilator" />

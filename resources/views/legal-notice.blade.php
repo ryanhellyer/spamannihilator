@@ -4,7 +4,10 @@
 @section('page-title', 'Legal Notice')
 @section('page-tagline', 'Unimportant mumbo jumbo for legal purposes')
 @section('title', 'Legal Notice - Spam Annihilator')
+@section('description', 'Legal notice and contact information for Spam Annihilator. Find operator details, contact information, and legal information.')
+@section('robots', 'noindex')
 @section('og:title', 'Legal Notice - Spam Annihilator')
+@section('og:description', 'Legal notice and contact information for Spam Annihilator. Find operator details, contact information, and legal information.')
 @section('canonical', url('/legal-notice/'))
 
 @section('header-button')
