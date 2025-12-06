@@ -105,7 +105,7 @@
 	<div class="wrapper">
 		Copyright &copy; <a href="https://ryan.hellyer.kiwi/">Ryan Hellyer</a> {{ date('Y') }}
 		<ul>
-			<li><a href="/home/">Home</a></li>
+			<li><a href="/">Home</a></li>
 			<li><a href="/privacy-policy/" rel="nofollow">Privacy Policy</a></li>
 			<li><a href="/legal-notice/" rel="nofollow">Legal Notice</a></li>
 		</ul>
