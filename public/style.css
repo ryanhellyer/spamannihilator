@@ -59,9 +59,10 @@ body {
 }
 
 .wrapper {
-	width: 100%;
+	width: calc(100% - 4rem);
 	max-width: var(--wrapper-width);
 	margin: 0 auto;
+	padding: 0 2rem;
 }
 
 /* =Accessibility
@@ -617,7 +618,12 @@ img {
 /* =Mobile support
 -------------------------------------------------------------- */
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
+	.wrapper {
+		width: 100%;
+		padding: 0;
+	}
+
 	header {
 		height: auto;
 
