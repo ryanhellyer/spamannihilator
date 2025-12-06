@@ -10,6 +10,7 @@ Mention Laravel task secheduler and needing Cron job every minute, then Laravel 
 Uses Laravel cache layer for caching link redirects - fast lookup
 Uses Redis directly for analytics, because it's not a cache and because Redis is required to use the increment() method (also works with caching layer, but makes this more explicit that the code needs Redis this way and can't be swapped out for another system).
 Redis is not persistent to disk - am happy with losing data if Redis goes down, it's not important data anyway
+Uses Redis::keys() instead of scan() because scan is more complex to implement and keys() should be fine since there won't be many keys since it gets updated every 15 mins anyway.
 
 ## Sync command
 SyncAnalyticsCommand() - mention that there's an artisan command here for syncing it manually
