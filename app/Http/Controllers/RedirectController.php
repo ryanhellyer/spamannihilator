@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\AnalyticsService;
 use App\Services\UrlLookupService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
@@ -13,7 +14,8 @@ use Illuminate\View\View;
 class RedirectController extends Controller
 {
     public function __construct(
-        private UrlLookupService $urlLookupService
+        private UrlLookupService $urlLookupService,
+        private AnalyticsService $analyticsService
     ) {
     }
 
@@ -22,6 +24,9 @@ class RedirectController extends Controller
         if (!$this->urlLookupService->slugExists($slug)) {
             abort(404);
         }
+
+        // Track the hit before redirecting (middleware won't catch 302 redirects)
+        $this->analyticsService->trackHit('/check/' . $slug);
 
         return redirect()->route('checking', ['slug' => $slug], 302);
     }

@@ -33,7 +33,12 @@ class TrackPathHits
                 return $response;
             }
             
-            // Track normal paths
+            // Normalize admin paths to generic "admin" to avoid cluttering DB with individual admin hashes
+            if (preg_match('#^admin/#', $path)) {
+                $path = '/admin';
+            }
+            
+            // Track paths
             $this->analyticsService->trackHit($path);
         }
 
