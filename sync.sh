@@ -51,7 +51,7 @@ EXCLUDES=(
     --exclude='.phpactor.json'
     --exclude='Homestead.json'
     --exclude='Homestead.yaml'
-    --exclude='.htpasswd'
+#    --exclude='.htpasswd'
     --exclude='.DS_Store'
     --exclude='Thumbs.db'
 )
