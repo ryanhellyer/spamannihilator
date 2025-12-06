@@ -235,7 +235,6 @@ body.admin .button {
 /* =Content sections
 -------------------------------------------------------------- */
 .primary,
-.secondary,
 body main {
 	.button {
 		display: block;
@@ -244,8 +243,7 @@ body main {
 	}
 }
 
-.primary,
-.secondary {
+.primary {
 	width: 100%;
 	padding: 6rem 0;
 

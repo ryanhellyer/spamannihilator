@@ -29,7 +29,7 @@
     </div>
   </section>
 
-  <section class="accent">
+  <section class="accent secondary">
     <div class="wrapper">
       <h1>WordPress Spam Destroyer</h1>
       <p>Stops automated spam while remaining as unobtrusive as possible to regular commenters. Simply install, and enjoy a spam free website. Perfect if you're sick of spam. Works via JavaScript with cookies and hidden fields to block bots without bothering real users.</p>
