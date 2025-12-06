@@ -104,6 +104,7 @@
   <div class="wrapper">
     Copyright &copy; Ryan Hellyer {{ date('Y') }}
     <ul>
+        <li><a href="/home/">Home</a></li>
         <li><a href="/privacy-policy/" rel="nofollow">Privacy Policy</a></li>
         <li><a href="/legal-notice/" rel="nofollow">Legal Notice</a></li>
     </ul>

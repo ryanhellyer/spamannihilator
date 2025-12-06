@@ -235,7 +235,6 @@ body.admin .button {
 /* =Content sections
 -------------------------------------------------------------- */
 .primary,
-.secondary,
 body main {
 	.button {
 		display: block;
@@ -244,8 +243,7 @@ body main {
 	}
 }
 
-.primary,
-.secondary {
+.primary {
 	width: 100%;
 	padding: 6rem 0;
 
@@ -438,6 +436,8 @@ button,
 	font-size: 1.2rem;
 	filter: var(--image-glow);
 	border-radius: 1rem;
+	text-align: center;
+
 
 	&[type=submit] {
 		font-weight: 400;
@@ -608,7 +608,7 @@ img {
 		line-height: 1rem;
 		display: inline-block;
 		border-left: 1px solid var(--white);
-		padding: 0 1rem;
+		padding: 0 0.5rem;
 		color: var(--white);
 		font-size: 0.9rem;
 	}
@@ -688,6 +688,21 @@ img {
 		padding: 3rem var(--mobile-padding) 3rem;
 	}
 
+	.secondary {
+		width: var(--mobile-width);
+		padding: 3rem var(--mobile-padding) 7rem;
+	}
+
+	body.privacy-policy,
+	body.legal-notice,
+	body.admin {
+		header {
+			.wrapper {
+				padding-bottom: 80%;
+			}
+		}
+	}
+
 	header h1,
 	h1 {
 		line-height: 3rem;
@@ -702,6 +717,22 @@ img {
 		font-size: 1.25rem;
 	}
 
+	label {
+		width: 100%;
+		line-height: 1rem;
+	}
+
+	input {
+		width: 65%;
+	}
+
+	input[type=submit],
+	button,
+	.button {
+		padding-right: 1rem;
+		padding-left: 1rem;
+	}
+
 	.testimonials {
 		blockquote {
 			width: calc(100%);
@@ -710,40 +741,7 @@ img {
 	}
 
 	#footer {
-		padding-top: 0;
+		padding-top: 1rem;
 		padding-bottom: 0;
-
-		h3 {
-			margin-top: 2.5rem;
-			font-size: 2rem;
-		}
-
-		ul {
-			gap: 0.5rem;
-			margin: 0rem 0;
-
-			a {
-				&::before {
-					width: 30px;
-					height: 30px;
-					transform: scale(0.75);
-				}
-
-			}
-		}
-
-		.legal-crap {
-			margin: 0 0 1rem;
-
-			span {
-				display: block;
-				line-height: 1rem;
-
-				a:first-child {
-					border-left: none;
-					margin-left: 0;
-				}
-			}
-		}
 	}
 }
