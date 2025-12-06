@@ -9,8 +9,8 @@
 <meta name="robots" content="@yield('robots')" />
 @endif
 <meta property="og:locale" content="{{ str_replace('_', '-', app()->getLocale()) }}" />
-<meta property="og:title" content="@yield('og:title', 'Spam Destruction - Spam Annihilator')" />
-<meta property="og:site_name" content="Spam Annihilator" />
+<meta property="og:title" content="@yield('og:title', 'Spam Destruction - Spam Destroyer')" />
+<meta property="og:site_name" content="Spam Destroyer" />
 <meta property="og:description" content="@yield('og:description', 'Easily block spam from Discord, Telegram and other invite links')" />
 <meta property="og:url" content="{{ url('/') }}" />
 <meta name="twitter:card" content="summary_large_image" />
@@ -24,7 +24,7 @@
       "@@type": "WebPage",
       "@@id": "{{ url('/') }}",
       "url": "{{ url('/') }}",
-      "name": "Spam Destruction - Spam Annihilator",
+      "name": "Spam Destruction - Spam Destroyer",
       "description": "Easily block spam from Discord, Telegram and other invite links. Powered by the Spam Destroyer for WordPress.",
       "datePublished": "2025-01-01T00:00:00+00:00",
       "dateModified": "2025-01-01T00:00:00+00:00",
@@ -40,7 +40,7 @@
       "@@type": "WebSite",
       "@@id": "{{ url('/') }}#website",
       "url": "{{ url('/') }}",
-      "name": "Spam Annihilator",
+      "name": "Spam Destroyer",
       "description": "Easily block spam from Discord, Telegram and other invite links.",
       "inLanguage": "{{ str_replace('_', '-', app()->getLocale()) }}"
     }
@@ -51,7 +51,7 @@
 <link rel="preload" href="/fonts/open-sans.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/style.css" as="style">
 <link href="/style.css" rel="stylesheet" />
-<title>@yield('title', 'Spam Destruction - Spam Annihilator')</title>
+<title>@yield('title', 'Spam Destruction - Spam Destroyer')</title>
 <link rel="canonical" href="@yield('canonical', url('/'))" />
 <link rel='dns-prefetch' href='//{{ parse_url(url('/'), PHP_URL_HOST) }}'>
 <link rel="icon" type="image/png" href="/images/favicon.png" sizes="32x32">
@@ -72,7 +72,7 @@
         width="450"
         height="450"
     >
-    <h1>@yield('page-title', 'Spam Annihilator')</h1>
+    <h1>@yield('page-title', 'Spam Destroyer')</h1>
     <p>@yield('page-tagline', 'Easily block spam from Discord, Telegram and other invite links')</p>
 
     @hasSection('header-button')
