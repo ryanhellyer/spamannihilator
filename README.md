@@ -6,6 +6,15 @@ Mention why Redis is used, then they're stashed in SQL after.
 Mention why SQLite was not used - drives me nuts, lack of experience
 Mention Laravel task secheduler and needing Cron job every minute, then Laravel handles whe to run it
 
+## Redis vs cache layer
+Uses Laravel cache layer for caching link redirects - fast lookup
+Uses Redis directly for analytics, because it's not a cache and because Redis is required to use the increment() method (also works with caching layer, but makes this more explicit that the code needs Redis this way and can't be swapped out for another system).
+Redis is not persistent to disk - am happy with losing data if Redis goes down, it's not important data anyway
+
+## Sync command
+SyncAnalyticsCommand() - mention that there's an artisan command here for syncing it manually
+AI kept suggesting all sorts of options, but I kept it simple.
+
 ## WordPress
 Moved away, coz ... 
 * Performance
@@ -23,4 +32,4 @@ Moved away, coz ...
 
 ## Images
 From Bing Image Creator
-
+Wanted friendly look instead of the weird space like previous version.
