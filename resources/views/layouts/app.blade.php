@@ -103,7 +103,7 @@
 
 <footer id="footer">
 	<div class="wrapper">
-		Copyright &copy; Ryan Hellyer {{ date('Y') }}
+		Copyright &copy; <a href="https://ryan.hellyer.kiwi/">Ryan Hellyer</a> {{ date('Y') }}
 		<ul>
 			<li><a href="/home/">Home</a></li>
 			<li><a href="/privacy-policy/" rel="nofollow">Privacy Policy</a></li>
