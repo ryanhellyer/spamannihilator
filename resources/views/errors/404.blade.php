@@ -8,7 +8,7 @@
 @section('header-avatar-alt', '404 error')
 
 @section('header-button')
-  <a href="{{ url('/') }}" class="button">Back to Home Page</a>
+	<a href="{{ url('/') }}" class="button">Back to Home Page</a>
 @endsection
 
 @section('header-form')

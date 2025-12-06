@@ -18,33 +18,33 @@
 @section('structured-data')
 <script type="application/ld+json">
 {
-  "@@context": "https://schema.org",
-  "@@graph": [
-    {
-      "@@type": "WebPage",
-      "@@id": "{{ url('/') }}",
-      "url": "{{ url('/') }}",
-      "name": "Spam Destruction - Spam Destroyer",
-      "description": "Easily block spam from Discord, Telegram and other invite links. Powered by the Spam Destroyer for WordPress.",
-      "datePublished": "2025-01-01T00:00:00+00:00",
-      "dateModified": "2025-01-01T00:00:00+00:00",
-      "author": {
-        "@@id": "{{ url('/') }}#author"
-      },
-      "isPartOf": {
-        "@@id": "{{ url('/') }}#website"
-      },
-      "inLanguage": "{{ str_replace('_', '-', app()->getLocale()) }}"
-    },
-    {
-      "@@type": "WebSite",
-      "@@id": "{{ url('/') }}#website",
-      "url": "{{ url('/') }}",
-      "name": "Spam Destroyer",
-      "description": "Easily block spam from Discord, Telegram and other invite links.",
-      "inLanguage": "{{ str_replace('_', '-', app()->getLocale()) }}"
-    }
-  ]
+	"@@context": "https://schema.org",
+	"@@graph": [
+		{
+			"@@type": "WebPage",
+			"@@id": "{{ url('/') }}",
+			"url": "{{ url('/') }}",
+			"name": "Spam Destruction - Spam Destroyer",
+			"description": "Easily block spam from Discord, Telegram and other invite links. Powered by the Spam Destroyer for WordPress.",
+			"datePublished": "2025-01-01T00:00:00+00:00",
+			"dateModified": "2025-01-01T00:00:00+00:00",
+			"author": {
+				"@@id": "{{ url('/') }}#author"
+			},
+			"isPartOf": {
+				"@@id": "{{ url('/') }}#website"
+			},
+			"inLanguage": "{{ str_replace('_', '-', app()->getLocale()) }}"
+		},
+		{
+			"@@type": "WebSite",
+			"@@id": "{{ url('/') }}#website",
+			"url": "{{ url('/') }}",
+			"name": "Spam Destroyer",
+			"description": "Easily block spam from Discord, Telegram and other invite links.",
+			"inLanguage": "{{ str_replace('_', '-', app()->getLocale()) }}"
+		}
+	]
 }
 </script>
 @show
@@ -64,37 +64,37 @@
 <body class="@yield('body-class', '')">
 
 <header class="accent">
-  <div class="wrapper">
-    <img 
-        src="@yield('header-avatar-src', '/images/spam-attack.avif')"
-        alt="@yield('header-avatar-alt', 'Robot being attacked by human')" 
-        fetchpriority="high"
-        class="header-avatar"
-        width="450"
-        height="450"
-    >
-    <h1>@yield('page-title', 'Spam Destroyer')</h1>
-    <p>@yield('page-tagline', 'Easily block spam from Discord, Telegram and other invite links')</p>
+	<div class="wrapper">
+		<img 
+			src="@yield('header-avatar-src', '/images/spam-attack.avif')"
+			alt="@yield('header-avatar-alt', 'Robot being attacked by human')" 
+			fetchpriority="high"
+			class="header-avatar"
+			width="450"
+			height="450"
+		>
+		<h1>@yield('page-title', 'Spam Destroyer')</h1>
+		<p>@yield('page-tagline', 'Easily block spam from Discord, Telegram and other invite links')</p>
 
-    @hasSection('header-button')
-    <p>
-        @yield('header-button')
-    </p>
-    @endif
+		@hasSection('header-button')
+		<p>
+			@yield('header-button')
+		</p>
+		@endif
 
-    @section('header-form')
-    <form method="POST" action="{{ route('redirect.store') }}">
-        @csrf
-        <p>
-            <label for="to">Link to protect</label>
-            <input type="url" name="to" id="to" placeholder="https://discord.gg/example" required>
-        </p>
-        <p>
-            <input class="button" type="submit" value="Create spam-protected link">
-        </p>
-    </form>
-    @show
-  </div>
+		@section('header-form')
+		<form method="POST" action="{{ route('redirect.store') }}">
+			@csrf
+			<p>
+				<label for="to">Link to protect</label>
+				<input type="url" name="to" id="to" placeholder="https://discord.gg/example" required>
+			</p>
+			<p>
+				<input class="button" type="submit" value="Create spam-protected link">
+			</p>
+		</form>
+		@show
+	</div>
 </header>
 
 <main>
@@ -102,14 +102,14 @@
 </main>
 
 <footer id="footer">
-  <div class="wrapper">
-    Copyright &copy; Ryan Hellyer {{ date('Y') }}
-    <ul>
-        <li><a href="/home/">Home</a></li>
-        <li><a href="/privacy-policy/" rel="nofollow">Privacy Policy</a></li>
-        <li><a href="/legal-notice/" rel="nofollow">Legal Notice</a></li>
-    </ul>
-  </div>
+	<div class="wrapper">
+		Copyright &copy; Ryan Hellyer {{ date('Y') }}
+		<ul>
+			<li><a href="/home/">Home</a></li>
+			<li><a href="/privacy-policy/" rel="nofollow">Privacy Policy</a></li>
+			<li><a href="/legal-notice/" rel="nofollow">Legal Notice</a></li>
+		</ul>
+	</div>
 </footer>
 
 </body>

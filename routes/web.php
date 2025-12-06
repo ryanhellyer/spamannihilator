@@ -10,10 +10,6 @@ Route::get('/', function () {
 
 Route::post('/', [RedirectManagementController::class, 'store'])->name('redirect.store');
 
-Route::get('/home-new/', function () {
-    return view('home');
-});
-
 Route::get('/legal-notice/', function () {
     return view('legal-notice');
 })->name('legal-notice');
