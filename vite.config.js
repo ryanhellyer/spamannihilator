@@ -7,7 +7,7 @@ import { resolve } from 'path';
 export default defineConfig({
     plugins: [
         laravel({
-            input: [],
+            input: ['resources/css/style.css'],
             refresh: true,
         }),
         tailwindcss(),
