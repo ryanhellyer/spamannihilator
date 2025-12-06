@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\UrlMapping;
+use App\Services\AnalyticsService;
 use App\Services\UrlLookupService;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -11,7 +12,8 @@ use Illuminate\Http\RedirectResponse;
 class RedirectManagementController extends Controller
 {
     public function __construct(
-        private UrlLookupService $urlLookupService
+        private UrlLookupService $urlLookupService,
+        private AnalyticsService $analyticsService
     ) {
     }
 
@@ -53,9 +55,23 @@ class RedirectManagementController extends Controller
     {
         $urlMapping = UrlMapping::where('admin_hash', $hash)->firstOrFail();
 
+        // Get hit statistics
+        // Database count (synced, persistent)
+        $dbHitCount = $urlMapping->hit_count ?? 0;
+        
+        // Redis count (real-time, unsynced - will be added to DB on next sync)
+        $checkPath = '/check/' . $urlMapping->slug;
+        $redisHitCount = $this->analyticsService->getHitCount($checkPath);
+        
+        // Total count (DB + Redis)
+        $totalHitCount = $dbHitCount + $redisHitCount;
+
         return view('admin', [
             'urlMapping' => $urlMapping,
             'adminUrl' => route('admin.show', ['hash' => $hash]),
+            'dbHitCount' => $dbHitCount,
+            'redisHitCount' => $redisHitCount,
+            'totalHitCount' => $totalHitCount,
         ]);
     }
 

@@ -68,6 +68,10 @@
 					<input class="button" type="submit" value="Update link">
 				</p>
 			</form>
+
+			<p>
+				Your link has been loaded a total of <strong>{{ number_format($totalHitCount) }} times</strong>.
+			</p>
 		</div>
 	</section>
 
