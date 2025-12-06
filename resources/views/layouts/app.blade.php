@@ -54,8 +54,9 @@
 <title>@yield('title', 'Spam Destruction - Spam Destroyer')</title>
 <link rel="canonical" href="@yield('canonical', url('/'))" />
 <link rel='dns-prefetch' href='//{{ parse_url(url('/'), PHP_URL_HOST) }}'>
-<link rel="icon" type="image/png" href="/images/favicon.png" sizes="32x32">
-<link rel="shortcut icon" href="/favicon.ico">
+<link rel="icon" type="image/png" href="/images/favicon-64x64.png" sizes="64x64">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="shortcut icon" href="/images/favicon.ico">
 <meta name="theme-color" content="#1483c8">
 <meta name="generator" content="Laravel" />
 @stack('head')
