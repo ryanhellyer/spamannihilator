@@ -5,6 +5,12 @@ import { copyFileSync, cpSync, mkdirSync } from 'fs';
 import { resolve } from 'path';
 
 export default defineConfig({
+    build: {
+        ssr: false,
+        rollupOptions: {
+            input: ['resources/css/style.css'],
+        },
+    },
     plugins: [
         laravel({
             input: ['resources/css/style.css'],
