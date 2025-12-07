@@ -3356,12 +3356,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ryanhellyer/laravel-production-stats.git",
-                "reference": "33916b46f716c37764eeb548b974f2d08d1a97a6"
+                "reference": "49059a98a7918ce3fb715df16bbeb788fb2ee527"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ryanhellyer/laravel-production-stats/zipball/33916b46f716c37764eeb548b974f2d08d1a97a6",
-                "reference": "33916b46f716c37764eeb548b974f2d08d1a97a6",
+                "url": "https://api.github.com/repos/ryanhellyer/laravel-production-stats/zipball/49059a98a7918ce3fb715df16bbeb788fb2ee527",
+                "reference": "49059a98a7918ce3fb715df16bbeb788fb2ee527",
                 "shasum": ""
             },
             "require": {
@@ -3406,7 +3406,7 @@
                 "issues": "https://github.com/ryanhellyer/laravel-production-stats/issues",
                 "source": "https://github.com/ryanhellyer/laravel-production-stats/tree/1.0"
             },
-            "time": "2025-12-07T11:10:08+00:00"
+            "time": "2025-12-07T11:45:59+00:00"
         },
         {
             "name": "symfony/clock",
