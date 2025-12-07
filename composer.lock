@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "727a42d4a394e203361240e5bbec6a7a",
+    "content-hash": "c36eccd18ac08ad3a717019e5eaf29fa",
     "packages": [
         {
             "name": "brick/math",
@@ -3349,6 +3349,64 @@
                 "source": "https://github.com/ramsey/uuid/tree/4.9.1"
             },
             "time": "2025-09-04T20:59:21+00:00"
+        },
+        {
+            "name": "ryanhellyer/laravel-production-stats",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ryanhellyer/laravel-production-stats.git",
+                "reference": "59e53d1485870751520738ef99e8f8fd97366a8b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ryanhellyer/laravel-production-stats/zipball/59e53d1485870751520738ef99e8f8fd97366a8b",
+                "reference": "59e53d1485870751520738ef99e8f8fd97366a8b",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/http": "^10.0|^11.0|^12.0",
+                "illuminate/support": "^10.0|^11.0|^12.0",
+                "php": "^8.2"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "RyanHellyer\\ProductionStats\\ProductionStatsServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "RyanHellyer\\ProductionStats\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Ryan Hellyer",
+                    "email": "ryan@hellyer.kiwi"
+                }
+            ],
+            "description": "Production-ready performance monitoring for Laravel - automatically track and inject performance statistics into responses",
+            "homepage": "https://github.com/ryanhellyer/laravel-production-stats",
+            "keywords": [
+                "laravel",
+                "load-time",
+                "monitoring",
+                "performance",
+                "production",
+                "stats"
+            ],
+            "support": {
+                "issues": "https://github.com/ryanhellyer/laravel-production-stats/issues",
+                "source": "https://github.com/ryanhellyer/laravel-production-stats/tree/v1.0.1"
+            },
+            "time": "2025-12-07T10:22:35+00:00"
         },
         {
             "name": "symfony/clock",
