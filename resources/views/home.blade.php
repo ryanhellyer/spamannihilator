@@ -2,7 +2,7 @@
 
 @section('body-class', 'home')
 @section('page-title', 'Spam Destroyer')
-@section('page-tagline', 'Easily block spam from Discord, Telegram and other invite links')
+@section('page-tagline', 'Block invite link spam from Discord, Telegram and others')
 
 @section('content')
 	<section class="primary testimonials">
