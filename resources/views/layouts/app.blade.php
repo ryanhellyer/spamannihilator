@@ -66,7 +66,7 @@
 <header class="accent">
 	<div class="wrapper">
 		<img 
-			src="@yield('header-avatar-src', '/images/spam-attack.avif')"
+			src="@yield('header-avatar-src', '/images/spam-attack-577x577.avif')"
 			alt="@yield('header-avatar-alt', 'Robot being attacked by human')" 
 			fetchpriority="high"
 			class="header-avatar"
