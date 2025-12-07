@@ -74,7 +74,7 @@
 			height="450"
 		>
 		<h1>@yield('page-title', 'Spam Destroyer')</h1>
-		<p>@yield('page-tagline', 'Easily block spam from Discord, Telegram and other invite links')</p>
+		<p>@yield('page-tagline', 'Block invite link spam from Discord, Telegram and others')</p>
 
 		@hasSection('header-button')
 		<p>
